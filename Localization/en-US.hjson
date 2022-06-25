@@ -1,0 +1,13 @@
+﻿Mods: {
+	NoTownMusic: {
+		Config: {
+			Label: "Options"
+			DisableTownMusicBoxRecipesLabel: "Town Music Box Recipes"
+			DisableTownMusicBoxRecipesTooltip: "Adds recipes for the Town Day and Night music boxes when enabled"
+		}
+		RecipeConditions: {
+			InsideTownDuringDay: "Inside a town during the day"
+			InsideTownDuringNight: "Inside a town during the night"
+		}
+	}
+}

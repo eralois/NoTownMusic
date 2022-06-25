@@ -1,1 +1,3 @@
 Stops the Town Day and Night themes from playing automatically in towns.
+
+Also adds recipes for the Town Day and Night music boxes. They can be crafted with a Music Box at a Tinkerer's Workshop while in a town, during the day/night. (Can be disabled in config)
