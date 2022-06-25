@@ -14,7 +14,7 @@ public class NoTownMusic : Mod {
 	private static readonly FieldInfo _TownNPCsField = typeof(Player).GetField("townNPCs", BindingFlags.Instance | BindingFlags.Public);
 
 	public override void Load() {
-		if (_LocalPlayerGetMethod == null || _TownNPCsField == null)
+		if (_LocalPlayerGetMethod == null)
 			throw new Exception("Couldn't find get_LocalPlayer");
 
 		if (_TownNPCsField == null)
