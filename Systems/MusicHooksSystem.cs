@@ -3,13 +3,11 @@ using System.Reflection;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace NoTownMusic;
+namespace NoTownMusic.Systems;
 
-public class NoTownMusic : Mod {
+public class MusicHooksSystem : ModSystem {
 	private static readonly MethodInfo _LocalPlayerGetMethod = typeof(Main).GetProperty("LocalPlayer", BindingFlags.Static | BindingFlags.Public).GetMethod;
 	private static readonly FieldInfo _TownNPCsField = typeof(Player).GetField("townNPCs", BindingFlags.Instance | BindingFlags.Public);
 
@@ -36,24 +34,5 @@ public class NoTownMusic : Mod {
 		} else {
 			throw new Exception("Couldn't apply NoTownMusic hook");
 		}
-	}
-
-	public override void AddRecipes() {
-		const float MinimumTownNPCs = 2f;
-
-		if (!NoTownMusicConfig.Instance.TownMusicBoxRecipes)
-			return;
-
-		Recipe.Create(ItemID.MusicBoxTownDay)
-			.AddIngredient(ItemID.MusicBox)
-			.AddTile(TileID.TinkerersWorkbench)
-			.AddCondition(NetworkText.FromKey("Mods.NoTownMusic.RecipeConditions.InsideTownDuringDay"), (_) => Main.LocalPlayer.townNPCs >= MinimumTownNPCs && Main.dayTime)
-			.Register();
-
-		Recipe.Create(ItemID.MusicBoxTownNight)
-			.AddIngredient(ItemID.MusicBox)
-			.AddTile(TileID.TinkerersWorkbench)
-			.AddCondition(NetworkText.FromKey("Mods.NoTownMusic.RecipeConditions.InsideTownDuringNight"), (_) => Main.LocalPlayer.townNPCs >= MinimumTownNPCs && !Main.dayTime)
-			.Register();
 	}
 }
