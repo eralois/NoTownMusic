@@ -5,13 +5,9 @@ namespace NoTownMusic;
 
 [Label("$Mods.NoTownMusic.Config.Label")]
 public class NoTownMusicConfig : ModConfig {
-	public static NoTownMusicConfig Instance { get; private set; }
+	public static NoTownMusicConfig Instance;
 
 	public override ConfigScope Mode => ConfigScope.ServerSide;
-
-	public override void OnLoaded() {
-		Instance = this;
-	}
 
 	[Label("$Mods.NoTownMusic.Config.DisableTownMusicBoxRecipesLabel")]
 	[Tooltip("$Mods.NoTownMusic.Config.DisableTownMusicBoxRecipesTooltip")]
