@@ -1,5 +1,9 @@
 displayName = No Town Music
 author = eralois
 version = 1.0.4
+homepage = https://github.com/eralois/NoTownMusic
 side = Client
-buildIgnore = *.csproj, *.user, obj\*, bin\*, lib\*, .vs\*, *.xcf
+hideCode = false
+hideResources = false
+includeSource = false
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*, Old\*
