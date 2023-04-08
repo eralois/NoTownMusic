@@ -1,6 +1,11 @@
-.vs/
-bin/
-obj/
-Old/
-*.ignored
+**/bin/
+**/obj/
+**/packages/
+.vs
 *.user
+*.suo
+*.cache
+*.force
+**/packages/
+**/.vs/
+**/.idea/
