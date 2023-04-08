@@ -1,0 +1,5 @@
+displayName = No Town Music
+author = eralois
+version = 1.0.4
+side = Client
+buildIgnore = *.csproj, *.user, obj\*, bin\*, lib\*, .vs\*, *.xcf
